@@ -70,6 +70,9 @@
                                     <constraint firstAttribute="width" constant="150" id="fFL-ac-woh"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="f"/>
+                                <connections>
+                                    <action selector="fbBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ou9-oV-QiB"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="iOy-Rf-jzL">
                                 <rect key="frame" x="35" y="381" width="305" height="161"/>
