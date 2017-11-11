@@ -10,6 +10,10 @@
 		37DE46AA5E64564BCCBED985 /* Pods_Social_MediaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CB54DD6C2DBA57BDF66657 /* Pods_Social_MediaTests.framework */; };
 		B20F7FBD0EB5D8A3D61EB7FC /* Pods_Social_Media.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6907763F870F7599CB2C4A /* Pods_Social_Media.framework */; };
 		D1AD3978BE36C39D24046161 /* Pods_Social_MediaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704FAA14FE56ADEEDEC80C8A /* Pods_Social_MediaUITests.framework */; };
+		DE02AAC91FB613A100E6EFB3 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02AAC81FB613A100E6EFB3 /* FancyView.swift */; };
+		DE02AACB1FB6141F00E6EFB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02AACA1FB6141F00E6EFB3 /* Constants.swift */; };
+		DE02AACD1FB732F400E6EFB3 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02AACC1FB732F400E6EFB3 /* RoundButton.swift */; };
+		DE02AACF1FB734FE00E6EFB3 /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02AACE1FB734FE00E6EFB3 /* FancyButton.swift */; };
 		DE17E54C1FB4E3C400237C1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17E54B1FB4E3C400237C1E /* AppDelegate.swift */; };
 		DE17E54E1FB4E3C400237C1E /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17E54D1FB4E3C400237C1E /* SignInVC.swift */; };
 		DE17E5511FB4E3C400237C1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE17E54F1FB4E3C400237C1E /* Main.storyboard */; };
@@ -45,6 +49,10 @@
 		57DD4BD1AD9FA5192D1B4016 /* Pods-Social Media.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Media.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social Media/Pods-Social Media.release.xcconfig"; sourceTree = "<group>"; };
 		6E6907763F870F7599CB2C4A /* Pods_Social_Media.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_Media.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		704FAA14FE56ADEEDEC80C8A /* Pods_Social_MediaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_MediaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE02AAC81FB613A100E6EFB3 /* FancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		DE02AACA1FB6141F00E6EFB3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DE02AACC1FB732F400E6EFB3 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		DE02AACE1FB734FE00E6EFB3 /* FancyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
 		DE17E5481FB4E3C400237C1E /* Social Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Media.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE17E54B1FB4E3C400237C1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE17E54D1FB4E3C400237C1E /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -111,6 +119,9 @@
 		DE02AAC61FB4E76900E6EFB3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE02AAC81FB613A100E6EFB3 /* FancyView.swift */,
+				DE02AACC1FB732F400E6EFB3 /* RoundButton.swift */,
+				DE02AACE1FB734FE00E6EFB3 /* FancyButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,6 +129,7 @@
 		DE02AAC71FB4E77300E6EFB3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DE17E54D1FB4E3C400237C1E /* SignInVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -151,12 +163,12 @@
 				DE02AAC61FB4E76900E6EFB3 /* View */,
 				DE02AAC51FB4E76500E6EFB3 /* Model */,
 				DE17E54B1FB4E3C400237C1E /* AppDelegate.swift */,
-				DE17E54D1FB4E3C400237C1E /* SignInVC.swift */,
-				DE17E54F1FB4E3C400237C1E /* Main.storyboard */,
 				DE17E5521FB4E3C400237C1E /* Assets.xcassets */,
+				DE17E54F1FB4E3C400237C1E /* Main.storyboard */,
 				DE17E5541FB4E3C400237C1E /* LaunchScreen.storyboard */,
 				DE17E5571FB4E3C400237C1E /* Info.plist */,
 				DE17E5791FB4E50600237C1E /* GoogleService-Info.plist */,
+				DE02AACA1FB6141F00E6EFB3 /* Constants.swift */,
 			);
 			path = "Social Media";
 			sourceTree = "<group>";
@@ -494,6 +506,10 @@
 			files = (
 				DE17E54E1FB4E3C400237C1E /* SignInVC.swift in Sources */,
 				DE17E54C1FB4E3C400237C1E /* AppDelegate.swift in Sources */,
+				DE02AAC91FB613A100E6EFB3 /* FancyView.swift in Sources */,
+				DE02AACF1FB734FE00E6EFB3 /* FancyButton.swift in Sources */,
+				DE02AACB1FB6141F00E6EFB3 /* Constants.swift in Sources */,
+				DE02AACD1FB732F400E6EFB3 /* RoundButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
