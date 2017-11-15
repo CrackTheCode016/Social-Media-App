@@ -98,6 +98,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="emailSignInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DO2-le-A83"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -122,10 +125,46 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="Y9H-8T-GEc" id="yUD-Ux-Pp3"/>
+                        <outlet property="passField" destination="EeK-Qg-nCk" id="Gi8-rP-7sj"/>
+                        <outlet property="signInStackView" destination="iOy-Rf-jzL" id="mgc-4U-gkz"/>
+                        <segue destination="AYv-VU-Iah" kind="show" identifier="toFeedVC" id="39Y-cT-o82"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="30.134932533733135"/>
+            <point key="canvasLocation" x="-14" y="29"/>
+        </scene>
+        <!--FeedVC-->
+        <scene sceneID="wif-t2-1R5">
+            <objects>
+                <viewController id="AYv-VU-Iah" customClass="FeedVC" customModule="Social_Media" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NV4-IC-yT0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVS-LB-Gr4">
+                                <rect key="frame" x="157" y="318" width="60" height="30"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutBtnPress:" destination="AYv-VU-Iah" eventType="touchUpInside" id="GpX-1J-Oa8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nVS-LB-Gr4" firstAttribute="centerY" secondItem="NV4-IC-yT0" secondAttribute="centerY" id="WgC-b1-DzA"/>
+                            <constraint firstItem="nVS-LB-Gr4" firstAttribute="centerX" secondItem="NV4-IC-yT0" secondAttribute="centerX" id="mlT-Mn-LX5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0ly-uc-Fg0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzW-WI-xWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="30"/>
         </scene>
     </scenes>
     <resources>
