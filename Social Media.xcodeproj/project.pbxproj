@@ -22,7 +22,10 @@
 		DE17E5611FB4E3C400237C1E /* Social_MediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17E5601FB4E3C400237C1E /* Social_MediaTests.swift */; };
 		DE17E56C1FB4E3C400237C1E /* Social_MediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE17E56B1FB4E3C400237C1E /* Social_MediaUITests.swift */; };
 		DE17E57A1FB4E50600237C1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE17E5791FB4E50600237C1E /* GoogleService-Info.plist */; };
+		DE1E02091FC8DCA200C11B87 /* PostImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1E02081FC8DCA200C11B87 /* PostImage.swift */; };
+		DE1E020B1FC8DD3400C11B87 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1E020A1FC8DD3400C11B87 /* PostCell.swift */; };
 		DED9AB191FBC86C800896C07 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9AB181FBC86C800896C07 /* FeedVC.swift */; };
+		DED9AB1D1FC5AE1800896C07 /* CustoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9AB1C1FC5AE1800896C07 /* CustoTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +71,13 @@
 		DE17E56B1FB4E3C400237C1E /* Social_MediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Social_MediaUITests.swift; sourceTree = "<group>"; };
 		DE17E56D1FB4E3C400237C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE17E5791FB4E50600237C1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE1E02081FC8DCA200C11B87 /* PostImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImage.swift; sourceTree = "<group>"; };
+		DE1E020A1FC8DD3400C11B87 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		DED483DD1FB745C1009FCB82 /* Social Media.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Social Media.entitlements"; sourceTree = "<group>"; };
 		DED9AB181FBC86C800896C07 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		DED9AB1A1FC5AC6400896C07 /* Nexa Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Bold.otf"; sourceTree = "<group>"; };
+		DED9AB1B1FC5AC6400896C07 /* Nexa Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Light.otf"; sourceTree = "<group>"; };
+		DED9AB1C1FC5AE1800896C07 /* CustoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustoTextField.swift; sourceTree = "<group>"; };
 		F28436F2CCDBA5A73C98D313 /* Pods-Social MediaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social MediaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social MediaTests/Pods-Social MediaTests.release.xcconfig"; sourceTree = "<group>"; };
 		F2F8370C01C27C9F8584068C /* Pods-Social Media.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Media.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social Media/Pods-Social Media.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +133,9 @@
 				DE02AAC81FB613A100E6EFB3 /* FancyView.swift */,
 				DE02AACC1FB732F400E6EFB3 /* RoundButton.swift */,
 				DE02AACE1FB734FE00E6EFB3 /* FancyButton.swift */,
+				DED9AB1C1FC5AE1800896C07 /* CustoTextField.swift */,
+				DE1E02081FC8DCA200C11B87 /* PostImage.swift */,
+				DE1E020A1FC8DD3400C11B87 /* PostCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,6 +182,8 @@
 				DE17E5521FB4E3C400237C1E /* Assets.xcassets */,
 				DE17E54F1FB4E3C400237C1E /* Main.storyboard */,
 				DE17E5541FB4E3C400237C1E /* LaunchScreen.storyboard */,
+				DED9AB1A1FC5AC6400896C07 /* Nexa Bold.otf */,
+				DED9AB1B1FC5AC6400896C07 /* Nexa Light.otf */,
 				DE17E5571FB4E3C400237C1E /* Info.plist */,
 				DE17E5791FB4E50600237C1E /* GoogleService-Info.plist */,
 				DE02AACA1FB6141F00E6EFB3 /* Constants.swift */,
@@ -456,9 +469,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Social Media/Pods-Social Media-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -475,6 +491,7 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
@@ -486,6 +503,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
@@ -527,8 +545,11 @@
 				DE17E54C1FB4E3C400237C1E /* AppDelegate.swift in Sources */,
 				DE02AAC91FB613A100E6EFB3 /* FancyView.swift in Sources */,
 				DE02AACF1FB734FE00E6EFB3 /* FancyButton.swift in Sources */,
+				DE1E02091FC8DCA200C11B87 /* PostImage.swift in Sources */,
 				DE02AACB1FB6141F00E6EFB3 /* Constants.swift in Sources */,
+				DED9AB1D1FC5AE1800896C07 /* CustoTextField.swift in Sources */,
 				DE02AACD1FB732F400E6EFB3 /* RoundButton.swift in Sources */,
+				DE1E020B1FC8DD3400C11B87 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

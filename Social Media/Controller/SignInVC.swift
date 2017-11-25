@@ -12,8 +12,11 @@ import FBSDKLoginKit
 import Firebase
 import FirebaseAuth
 import SwiftKeychainWrapper
+import GoogleSignIn
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController, GIDSignInUIDelegate  {
+ 
+    
 
     @IBOutlet weak var signInStackView: UIStackView!
     @IBOutlet weak var emailField: UITextField!
@@ -21,23 +24,32 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        passField.isSecureTextEntry = true
         emailField.keyboardType = .emailAddress
         emailField.clearButtonMode = .whileEditing
-        passField.isSecureTextEntry = true
         passField.clearButtonMode = .whileEditing
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
-            performSegue(withIdentifier: "toFeedVC", sender: nil)
+            segueToFeed()
         }
     }
-  
+    
+    func segueToFeed() {performSegue(withIdentifier: "toFeedVC", sender: nil)}
+    
+     
+    @IBAction func googleSignInTap(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+        segueToFeed()
+    }
+    
     @IBAction func fbBtnTapped(_ sender: Any) {
         let facebookLogin = FBSDKLoginManager()
         facebookLogin.logIn(withReadPermissions: ["email"], from: self, handler: {result, error in
             if error != nil {
-                print("REPORT: NOT ABLE TO SIGN IN. FATAL ERROR. \(error)")
+                print("REPORT: NOT ABLE TO SIGN IN. FATAL ERROR: \(error.debugDescription)")
             }
             
             else if result?.isCancelled == true {
@@ -47,12 +59,10 @@ class SignInVC: UIViewController {
             else {
                 print("REPORT: SUCCESS.  USER AUTH WITH FACEBOOK.")
                 let cred = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                    self.firebaseAuth(cred)
+                    firebaseAuth(cred)
+                    self.segueToFeed()
             }
-            
-            
         })
-        
     }
     
     @IBAction func emailSignInTapped(_ sender: Any) {
@@ -61,9 +71,10 @@ class SignInVC: UIViewController {
                 
             
                 if error == nil {
-                    print("REPORT: User is hunkey-dory!")
+                    print("REPORT: User signed in.")
                     if let user = user {
-                        self.completeSignIn(id: user.uid)
+                        completeSignIn(id: user.uid)
+                        self.segueToFeed()
                     }
                 }
                 else {
@@ -73,9 +84,10 @@ class SignInVC: UIViewController {
                         }
                         
                         else {
-                            print("REPORT: Success! Authed with Firebase")
+                            print("REPORT: User signed up")
                             if let user = user {
-                                self.completeSignIn(id: user.uid)
+                                completeSignIn(id: user.uid)
+                                self.segueToFeed()
                             }
                         }
                         
@@ -86,29 +98,7 @@ class SignInVC: UIViewController {
         
     }
     
+   
     
-    func firebaseAuth(_ cred: AuthCredential) {
-        Auth.auth().signIn(with: cred, completion: {(user, error) in
-            if error != nil {
-                print("REPORT: UNABLE TO AUTH TO FIREBASE. \(error)")
-            }
-            
-            else {
-                print("REPORT: FIREBASE AUTH SUCESSFUL :D")
-                if let user = user {
-                    self.completeSignIn(id: user.uid)
-                }
-            }
-            
-        })
-        
-    }
-    
-    func completeSignIn(id: String) {
-        KeychainWrapper.standard.set(id, forKey: KEY_UID)
-        print("REPORT: Data saved to keychain.")
-        performSegue(withIdentifier: "toFeedVC", sender: nil)
-
-    }
 }
 
